@@ -29,4 +29,11 @@ client_secret
 user_agent
 ```
 
+Additionally, you should create a `data.txt` file for the description, with the following information:
+
+```
+playlist_link (https://www.youtube.com/playlist?list=INSERT)
+channel_sub_link (https://www.youtube.com/channel/INSERT?sub_confirmation=1)
+```
+
 After that it should be ready to run, by executing `video.py`.

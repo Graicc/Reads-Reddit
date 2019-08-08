@@ -121,10 +121,13 @@ def Upload(titleClass):
 	title = "{} - Reads Reddit".format(tText)
 	print(title)
 
+	f = open("data.txt", "r")
 	desc = "r/AskReddit - {0.body} (https://www.reddit.com{0.uid}) \
-		\n\nPlaylist: https://www.youtube.com/playlist?list=PLm7PRSplLAyQk2GPvYkXtWBgGXYR_aGYV \
-		\nDon't forget so subscribe: https://www.youtube.com/channel/UCD7JJt01KDzr27HUYzYHICg?sub_confirmation=1" \
-		.format(titleClass)
+		\n\nPlaylist: {1} \
+		\nDon't forget so subscribe: {2}" \
+		.format(titleClass, f.readline().strip(), f.readline().strip())
+	
+	f.close()
 	print(desc)
 
 	print('youtube-upload --title="{0}" \
@@ -146,7 +149,7 @@ import shutil
 def CleanUp():
 	print("Cleaning up")
 	shutil.rmtree("audio")
-	shtuil.rmtree("img")
+	shutil.rmtree("img")
 	os.remove("input.txt")
 	os.remove("inputa.txt")
 	os.remove("output.mp4")
